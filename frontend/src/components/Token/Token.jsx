@@ -1,11 +1,10 @@
 import React from 'react'
-import { Container, Row, Col, Form , Button} from 'react-bootstrap'
+import { Container, Row, Col} from 'react-bootstrap'
 
 import { useParams } from 'react-router-dom'
-const Token = ({match}) => {
+const Token = () => {
   const { token } = useParams()
 
-  console.log("token After Login", token);
   return (
     <Container>
       <Row>

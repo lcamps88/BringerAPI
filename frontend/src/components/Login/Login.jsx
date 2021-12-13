@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import axios from 'axios'
 import { useLocation, useNavigate } from 'react-router-dom'
-import Token from '../Token/Token'
 
 const Login = () => {
   let navigate = useNavigate()
@@ -28,7 +27,6 @@ const Login = () => {
     setCredentials({ ...credentials, [name]: value })
   }
 
-  console.log('credentials: ', credentials)
 
   const loginToken = async (user, password) => {
     try {
@@ -51,8 +49,6 @@ const Login = () => {
     }
   }
 
-  console.log('token', token)
-  
 
   useEffect(() => {
     document.title = 'Generate-Token'
@@ -60,6 +56,7 @@ const Login = () => {
       navigate(redirect)
     
     }
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token])
 
   return (

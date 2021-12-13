@@ -13,11 +13,7 @@ export const protectToken = asyncHandler(async (req, res, next) => {
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
       const users = await User.find(({ id }) => id === decoded.id)
-
-      console.log('decoded: ', decoded.id)
       console.log('user', users.id)
-
-      console.log('token', token)
       next()
     } catch (error) {
       console.error(error)

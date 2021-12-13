@@ -10,8 +10,6 @@ export const authUser = asyncHandler(async (req, res, next) => {
 
     const users = await User.find(({ user }) => user === user)
 
-    console.log("find users: ", users);
-
     if (users && (await bcrypt.compareSync(password, users.password))) {
       res.json({
         id: users._id,
@@ -32,7 +30,6 @@ export const authUser = asyncHandler(async (req, res, next) => {
 export const getUsers = asyncHandler(async (req, res, next) => {
     try {
       const user = await User.find(({id})=>id=== req.params.id)
-      console.log("user Get", user);
   
       if (user) {
         res.json({

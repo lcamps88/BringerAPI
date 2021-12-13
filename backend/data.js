@@ -10,5 +10,3 @@ const users = [
 ]
 
 export default users
-
-//pm.environment.set("TOKEN", pm.response.json().token)
